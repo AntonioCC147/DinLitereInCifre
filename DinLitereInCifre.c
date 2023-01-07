@@ -132,12 +132,12 @@ int main()
 	char textNumar[250]; int valoare;
 
 	do{
-        credite();
-        printf("Tastati " BOLD "1" COLOR_OFF " daca doriti sa introduceti direct numarul.\n");
-        printf(COLOR_OFF "Tastati " BOLD "2" COLOR_OFF " daca doriti sa accesati un manual explicativ inainte de a introduce numarul.\n");
-        printf(BOLD "Raspuns (1 / 2): "); scanf("%d", &valoare);
-        if(valoare != 1 && valoare != 2) system("cls");
-    }while(valoare != 1 && valoare != 2); getchar();
+            credite();
+            printf("Tastati " BOLD "1" COLOR_OFF " daca doriti sa introduceti direct numarul.\n");
+            printf(COLOR_OFF "Tastati " BOLD "2" COLOR_OFF " daca doriti sa accesati un manual explicativ inainte de a introduce numarul.\n");
+            printf(BOLD "Raspuns (1 / 2): "); scanf("%d", &valoare);
+            if(valoare != 1 && valoare != 2) system("cls");
+   	}while(valoare != 1 && valoare != 2); getchar();
 
 	if(valoare == 2) manual();
 	else principal();
