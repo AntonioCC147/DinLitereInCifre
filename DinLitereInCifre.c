@@ -104,24 +104,24 @@ void principal(){
 
 	p = strtok(textNumar, " ");
 	while(p){
-        strcpy(cuvinteNumar[nrCuv++], p); p = strtok(NULL, " ");
+            strcpy(cuvinteNumar[nrCuv++], p); p = strtok(NULL, " ");
 	}
 
 	for(i = 0; i < nrCuv; i++){
-        if(stricmp(cuvinteNumar[i+1], "sute") == 0 || stricmp(cuvinteNumar[i+1], "suta") == 0){
-            raspuns_initial = raspuns_initial + (verificareCifra(cuvinteNumar[i]) * 100); i++;
-        }
-        else if(stricmp(cuvinteNumar[i+1], "mie") == 0 || stricmp(cuvinteNumar[i+1], "mii") == 0){
-            if(stricmp(cuvinteNumar[i], "de") == 0){
-                raspuns_initial = raspuns_initial * 1000; i++;
+            if(stricmp(cuvinteNumar[i+1], "sute") == 0 || stricmp(cuvinteNumar[i+1], "suta") == 0){
+                raspuns_initial = raspuns_initial + (verificareCifra(cuvinteNumar[i]) * 100); i++;
             }
-            else{ raspuns_initial = (raspuns_initial + verificareCifra(cuvinteNumar[i])) * 1000; i++; }
-        }
-        else if(nrCuv == 2 && stricmp(cuvinteNumar[i], "un") == 0 && stricmp(cuvinteNumar[i+1], "milion") == 0){
+            else if(stricmp(cuvinteNumar[i+1], "mie") == 0 || stricmp(cuvinteNumar[i+1], "mii") == 0){
+                if(stricmp(cuvinteNumar[i], "de") == 0){
+                    raspuns_initial = raspuns_initial * 1000; i++;
+                }
+                else{ raspuns_initial = (raspuns_initial + verificareCifra(cuvinteNumar[i])) * 1000; i++; }
+            }
+            else if(nrCuv == 2 && stricmp(cuvinteNumar[i], "un") == 0 && stricmp(cuvinteNumar[i+1], "milion") == 0){
                 raspuns_initial = 1000000; i++;
-        }
-        else if(stricmp(cuvinteNumar[i], "si") != 0)
-            raspuns_initial = raspuns_initial + verificareCifra(cuvinteNumar[i]);
+            }
+            else if(stricmp(cuvinteNumar[i], "si") != 0)
+                raspuns_initial = raspuns_initial + verificareCifra(cuvinteNumar[i]);
 	}
 
     raspuns(raspuns_initial);
